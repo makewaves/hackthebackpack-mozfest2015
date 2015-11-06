@@ -1,0 +1,6 @@
+Hack the Backpack 
+
+Bug Blaster / Scan
+
+
+1. Issuer URL displays truncatedhttps://github.com/mozilla/openbadges-backpack/issues/10412. Requires testing... to see if this has this been fixed already. https://github.com/mozilla/openbadges-backpack/issues/10293. Badge Sorting within backpackhttps://github.com/mozilla/openbadges-backpack/issues/10314.Upload Issue - mismatch in email idhttps://github.com/mozilla/openbadges-backpack/issues/10545. Formatting updatehttps://github.com/mozilla/openbadges-backpack/issues/10306. Alert update - if badge delete failshttps://github.com/mozilla/openbadges-backpack/issues/9967. Contact info updatehttps://github.com/mozilla/openbadges-backpack/issues/1018 8. Dragging taskhttps://github.com/mozilla/openbadges-backpack/issues/7399. User info on share pages https://github.com/mozilla/openbadges-backpack/issues/61510. Badge Upload - tidy up style https://github.com/mozilla/openbadges-backpack/issues/611Also... 1. The “public” flag on a Backpack Colection seems to have no effect on the visibility of share link. Investigation required. 2. Valiidator - Elliptic Curve signatures treated incorrectly.https://github.com/mozilla/openbadges-backpack/issues/1042
