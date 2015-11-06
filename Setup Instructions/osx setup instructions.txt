@@ -4,7 +4,7 @@
 02. login to github
 03. fork openbadges-backpack repo from makewaves
 
-https://github.com/makewaves/openbadges-backpack
+https://github.com/makewaves/openbadges-backpack-makewavesfork
 
 = OSX INSTRUCTIONS ==
 
