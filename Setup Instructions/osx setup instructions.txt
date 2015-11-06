@@ -2,7 +2,7 @@
 
 01. create github account if you haven't got one already
 02. login to github
-03. fork openbadges-backpack repo from makewaves
+03. fork openbadges-backpack-makewavesfork repo from makewaves
 
 https://github.com/makewaves/openbadges-backpack-makewavesfork
 
