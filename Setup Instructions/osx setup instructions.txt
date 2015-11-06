@@ -1,0 +1,69 @@
+== INITIAL UNIVERSAL STEPS ==
+
+01. create github account if you haven't got one already
+02. login to github
+03. fork openbadges-backpack repo from makewaves
+
+https://github.com/makewaves/openbadges-backpack
+
+= OSX INSTRUCTIONS ==
+
+04. open terminal
+
+05. Install Homebrew 
+
+06. Install node
+
+brew install node --without-npm
+echo prefix=~/.node >> ~/.npmrc
+curl -L https://www.npmjs.com/install.sh | sh
+echo 'export PATH="$HOME/.node/bin:$PATH"' >> ~/.bash_profile
+. ~/.bash_profile
+
+07. Install Mamp (if mysql or mamp not already installed)
+
+08. Load mysql
+
+/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -p”your secure password”
+
+09. run the following sql (replace "secret" with whatever password you want):
+
+    CREATE DATABASE openbadges;
+    GRANT ALL PRIVILEGES ON openbadges.* TO badgemaker@localhost IDENTIFIED BY 'secret';
+    CREATE DATABASE test_openbadges;
+    GRANT ALL PRIVILEGES ON test_openbadges.* to badgemaker@localhost IDENTIFIED BY 'secret';
+
+10. clone your forked repo
+
+    git clone git@github.com:{YOUR_ACCOUNT_HERE}/openbadges-backpack.git
+
+    Note: might need to add SSH key, if it is a new machine or new github account. 
+
+11. cd openbadges-backpack
+
+11. cp lib/environments/local-dist.js lib/environments/local.js
+
+12. edit "lib/environments/local.js" with the connection details you used in the sql statement in step 4.
+
+    database: {
+      driver: 'mysql',
+      host: '127.0.0.1',
+      user: 'badgemaker',
+      password: 'secret',
+      database: 'openbadges'
+    },
+
+13. npm install
+
+14. npm test
+
+15. npm start
+
+16. backpack should now be up and running on http://localhost:8888
+
+
+
+
+
+
+

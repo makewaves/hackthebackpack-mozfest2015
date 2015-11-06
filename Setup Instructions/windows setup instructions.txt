@@ -1,0 +1,44 @@
+== INITIAL UNIVERSAL STEPS ==
+
+01. create github account if you haven't got one already
+02. login to github
+03. fork openbadges-backpack repo from makewaves
+
+https://github.com/makewaves/openbadges-backpack
+
+= WINDOWS INSTRUCTIONS ==
+
+04. download and install node
+
+05. download and install mysql
+
+06. Install git
+
+https://git-scm.com/download/win
+
+07. in working directory, right click and select git bash here
+
+08. clone repo (your fork)
+
+git clone git@github.com:{YOUR_ACCOUNT_HERE}/openbadges-backpack.git
+
+09. login to mysql
+	-- cd c:\Program Files\MySQL\MySQL Server 5.7\bin
+	-- mysql -u root -p"password"
+
+10. run the following sql (replace "secret" with whatever password you want):
+
+    CREATE DATABASE openbadges;
+    GRANT ALL PRIVILEGES ON openbadges.* TO badgemaker@localhost IDENTIFIED BY 'secret';
+    CREATE DATABASE test_openbadges;
+    GRANT ALL PRIVILEGES ON test_openbadges.* to badgemaker@localhost IDENTIFIED BY 'secret';
+
+11. copy lib/environment/local-dist.js to lib/environment/local.js
+
+edit local.js with the same db connection details as you chose above
+
+11. npm install
+
+12. run "SET PORT=8888 && node app.js" to launch
+
+13. backpack should now be up and running on http://localhost:8888

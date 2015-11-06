@@ -1,0 +1,50 @@
+== INITIAL UNIVERSAL STEPS ==
+
+01. create github account if you haven't got one already
+02. login to github
+03. fork openbadges-backpack repo from makewaves
+
+https://github.com/makewaves/openbadges-backpack
+
+
+
+== UBUNTU 14.04.3 LTS (Trusty Tahr) INSTRUCTIONS ==
+
+04. open terminal (ctrl+alt+t)
+05. run "sudo apt-get install node nodejs-legacy npm git phantomjs mysql-server" and provide a mysql root user account password when prompted
+06. login to mysql using the password you decided upon
+    
+    mysql -u root -p"password"
+
+07. run the following sql (replace "secret" with whatever password you want):
+
+    CREATE DATABASE openbadges;
+    GRANT ALL PRIVILEGES ON openbadges.* TO badgemaker@localhost IDENTIFIED BY 'secret';
+    CREATE DATABASE test_openbadges;
+    GRANT ALL PRIVILEGES ON test_openbadges.* to badgemaker@localhost IDENTIFIED BY 'secret';
+
+08. clone your forked repo
+
+    git clone git@github.com:{YOUR_ACCOUNT_HERE}/openbadges-backpack.git
+
+09. cd openbadges-backpack
+
+10. cp lib/environments/local-dist.js lib/environments/local.js
+
+11. edit "lib/environments/local.js" with the connection details you used in the sql statement in step 4.
+
+    database: {
+      driver: 'mysql',
+      host: '127.0.0.1',
+      user: 'badgemaker',
+      password: 'secret',
+      database: 'openbadges'
+    },
+
+12. npm install
+
+13. npm test
+
+14. npm start
+
+15. backpack should now be up and running on http://localhost:8888
